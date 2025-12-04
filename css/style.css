@@ -1,0 +1,275 @@
+/* 基本リセットとフォント設定 */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f9; /* 背景色を薄いグレーに */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ヘッダー/ナビゲーションバー */
+.navbar {
+    background-color: #007bff; /* ナビゲーションバーの背景色（青） */
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar li {
+    margin-left: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* メインコンテンツのコンテナ */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* ユーザー情報セクション */
+.user-info {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.user-info h1 {
+    margin-top: 0;
+    font-size: 1.8em;
+    color: #007bff;
+}
+
+/* 運動ステータスカード（主要部分） */
+.status-card {
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.status-card:hover {
+    transform: translateY(-3px);
+}
+
+/* 低調な記録の場合のスタイル */
+.status-low {
+    background-color: #ffeaea; /* 薄い赤の背景 */
+    border: 1px solid #dc3545; /* 赤い枠線 */
+    color: #721c24; /* 濃い文字色 */
+}
+
+.status-low .status-header h2 {
+    color: #dc3545; /* 警告色の強調 */
+}
+
+/* 好調な記録の場合のスタイル（予備） */
+.status-good {
+    background-color: #e6ffed; /* 薄い緑の背景 */
+    border: 1px solid #28a745; /* 緑の枠線 */
+    color: #155724;
+}
+
+.status-good .status-header h2 {
+    color: #28a745; /* 成功色の強調 */
+}
+
+.status-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.status-header h2 {
+    margin: 0;
+    font-size: 1.6em;
+}
+
+.status-level {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9em;
+}
+
+.status-low .status-level {
+    background-color: #dc3545;
+    color: white;
+}
+
+.status-good .status-level {
+    background-color: #28a745;
+    color: white;
+}
+
+.status-metrics {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.7); /* 指標エリアを少し目立たせる */
+}
+
+.metric {
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.metric span {
+    display: block;
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.metric strong {
+    font-size: 1.5em;
+    color: inherit; /* 親要素の色を継承 */
+}
+
+.status-message h3 {
+    margin-top: 0;
+    font-size: 1.4em;
+}
+
+.status-message p {
+    font-size: 1.05em;
+    margin-bottom: 10px;
+}
+
+.call-to-action {
+    font-weight: 700;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.status-low .call-to-action {
+    color: #dc3545;
+}
+
+.status-good .call-to-action {
+    color: #28a745;
+}
+
+@media (max-width: 768px) {
+    /* タブレット・スマートフォン向け調整 */
+
+    /* ナビゲーションバーの調整 */
+    .navbar {
+        flex-direction: column; /* 要素を縦並びにする */
+        padding: 10px 15px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .navbar nav {
+        width: 100%; /* ナビゲーションリスト全体を幅いっぱいに */
+    }
+
+    .navbar ul {
+        flex-direction: column; /* ボタンを縦並びにする */
+        width: 100%;
+    }
+
+    .navbar li {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar a {
+        display: block; /* ボタン全体をクリック可能にする */
+        padding: 10px;
+        width: 100%; /* 親要素 (li) の幅いっぱいに広げる */
+        box-sizing: border-box; /* paddingを含めたサイズ計算 */
+    }
+
+    /* メインコンテナの調整 */
+    .container {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+
+    /* ユーザー情報とステータスカードのパディング調整 */
+    .user-info,
+    .status-card {
+        padding: 20px 15px; /* 左右のパディングを減らす */
+    }
+
+    /* フォントサイズの調整 */
+    .user-info h1 {
+        font-size: 1.5em;
+    }
+
+    .status-header h2 {
+        font-size: 1.4em;
+    }
+
+    .status-level {
+        padding: 3px 10px;
+        font-size: 0.8em;
+    }
+
+    /* 指標エリアの調整 */
+    .status-metrics {
+        flex-direction: column; /* 運動量と走行時間を縦に並べる */
+        padding: 10px 0;
+        gap: 10px; /* 要素間のスペース */
+    }
+
+    .metric {
+        font-size: 1em;
+    }
+
+    .metric strong {
+        font-size: 1.3em;
+    }
+
+    /* メッセージの調整 */
+    .status-message h3 {
+        font-size: 1.2em;
+    }
+
+    .status-message p {
+        font-size: 1em;
+    }
+}
